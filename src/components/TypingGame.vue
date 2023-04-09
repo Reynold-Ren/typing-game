@@ -7,8 +7,23 @@
   </div>
 </template>
 <script setup>
+import { ref, computed, onMounted } from "vue";
+import axios from "axios";
 import GameArea from './GameArea.vue';
 import ControlPanel from './ControlPanel.vue';
+
+const wordList = ref([]);
+
+const fetchWordList = async () => {
+  const response = await axios.get(
+    "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt"
+  );
+  wordList.value = response.data.split("\n");
+};
+
+onMounted(() => {
+  fetchWordList();
+})
 
 </script>
 <style scoped lang="scss">
