@@ -1,7 +1,44 @@
-# Vue 3 + Vite
+# 簡易打字遊戲
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+這是一個使用 Vue 3 + Vite 開發的簡單打字遊戲。
 
-## Recommended IDE Setup
+## 功能
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- 支持兩種遊戲模式：單字模式（character）和單詞模式（word）
+- 提供開始、暫停/繼續、結束遊戲按鈕
+- 遊戲區域顯示計時器、分數和當前目標
+- 提供輸入框供給沒有實體鍵盤的玩家使用屏幕鍵盤進行操作
+- 顯示遊戲結果（分數和準確率）
+
+### 單字模式
+
+- 遊戲隨機選擇一個 ASCII 字符作為目標
+- 玩家按下正確的鍵時，分數增加 100 分，並獲得新的目標
+- 如果按下錯誤的鍵，玩家需要重新嘗試，分數不變
+
+### 單詞模式
+
+- 遊戲從單詞列表中選擇一個單詞作為目標
+- 玩家需要輸入整個單詞並按 Enter 鍵確認
+- 玩家可使用退格鍵刪除上一個輸入的字符，無論是否正確
+- 輸入正確單詞並按下 Enter 鍵後，分數增加：100 分 * 單詞長度
+- 輸入錯誤單詞並按下 Enter 鍵後，分數減少 25 分
+
+## 遊戲結束
+
+- 時間耗盡或玩家按下 "停止" 按鈕時，遊戲結束
+- 遊戲結束時，會彈出一個模態框，顯示玩家的最終分數和準確率（正確字符數 / 輸入字符數）
+- 關閉模態框後，可以開始新的遊戲
+
+
+## 未來改進與功能
+
+以下是未來我們希望在此打字遊戲中實現的一些改進和功能：
+
+1. **多語言支持**：支持多種語言的單詞列表，以滿足不同語言用戶的需求。
+
+2. **自定義單詞列表**：允許用戶上傳自己的單詞列表，以便針對特定詞彙練習。
+
+3. **難度選擇**：為遊戲添加不同的難度級別，例如初級、中級和高級，適應不同熟練程度的玩家。
+
+4. **排行榜**：添加排行榜功能，讓玩家可以查看其他玩家的最高分數，增加競爭性和互動性。
