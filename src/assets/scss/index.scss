@@ -1,0 +1,10 @@
+$xl: "(max-width: 1200px)" !default;
+$lg: "(max-width: 992px)" !default;
+$md: "(max-width: 768px)" !default;
+$sm: "(max-width: 576px)" !default;
+
+@mixin media($query: $mobile) {
+	@media #{$query} {
+		@content;
+	}
+}

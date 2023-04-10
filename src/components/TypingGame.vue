@@ -166,6 +166,8 @@ onMounted(() => {
 
 </script>
 <style scoped lang="scss">
+@import "../assets/scss/index";
+
 .typingGameWrap {
   display: flex;
   align-items: center;
@@ -187,11 +189,18 @@ onMounted(() => {
   min-height: 700px;
   margin: 0 auto;
   background: rgba(0, 0, 0, .6);
+  @include media($lg) {
+    width: 90%;
+    min-height: 500px;
+  };
   h2 {
     font-size: 3rem;
     font-weight: bold;
     color: white;
     margin-top: auto;
+    @include media($sm) {
+      font-size: 2.5rem;
+    };
   }
   &__countdown {
     position: absolute;
